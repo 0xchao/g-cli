@@ -1,4 +1,5 @@
-
+# Gulp 脚手架 by Allen
+----
 ## 源代码目录结构
 
 源代码位于src文件夹中，其中再分`html`, `js`, `scss`, `images`, `vendors`等文件夹。
