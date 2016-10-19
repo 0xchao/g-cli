@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DeviceMotionEvent</title>
+</head>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<body>
+
+<ul id="one" class="level-1">
+  <li class="item-i">I</li>
+  <li id="ii" class="item-ii">II
+  <ul class="level-2">
+    <li class="item-a">A</li>
+    <li class="item-b">B
+      <ul class="level-3">
+        <li class="item-1">1</li>
+        <li class="item-2">2</li>
+        <li class="item-3">3</li>
+      </ul>
+    </li>
+    <li class="item-c">C</li>
+  </ul>
+  </li>
+  <li class="item-iii">III</li>
+</ul>
+_____________
+   <!--  <p>左右：<span id="alpha">0</span>
+    </p>
+    <p>前后：<span id="beta">0</span>
+    </p>
+    <p>扭转：<span id="gamma">0</span>
+    </p>
+    <p>指北针指向：<span id="heading">0</span>度</p>
+    <p>指北针精度：<span id="accuracy">0</span>度</p>
+    <hr />
+    <p>x轴加速度：<span id="x">0</span>米每二次方秒</p>
+    <p>y轴加速度：<span id="y">0</span>米每二次方秒</p>
+    <p>z轴加速度：<span id="z">0</span>米每二次方秒</p>
+    <hr />
+    <p>x轴加速度(考虑重力加速度)：<span id="xg">0</span>米每二次方秒</p>
+    
+    <hr /> -->
+    <p>beta:<span id="yg">0</span>米每二次方秒</p>
+    <p>rota：<span id="zg">0</span>米每二次方秒</p>
+    <p>左右旋转速度：<span id="Ralpha">0</span>度每秒</p>
+    <p>前后旋转速度：<span id="Rbeta">0</span>度每秒</p>
+    <p>扭转速度：<span id="Rgamma">0</span>度每秒</p>
+    <hr />
+
+    <p class="transform">2001</p>
+    <!-- <p>上次收到通知的间隔：<span id="interval">0</span>毫秒</p> -->
+    <script type="text/javascript" src="../vendors/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/app.js"></script>
+</body>
+
+</html>
