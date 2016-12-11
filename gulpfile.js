@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var scss = require('gulp-sass');
-var include = require('gulp-include'); //html代码复用 1
+var fileinclude = require('gulp-file-include');
+// var include = require('gulp-include'); //html代码复用 1
 var concat = require('gulp-concat'); //文件合并插件 1
 // var imagemin = require('gulp-imagemin');         //图片压缩 1
 var babel = require('gulp-babel'); //编译es6 1
@@ -35,8 +36,11 @@ gulp.task('scss', function() {
 
 // 编译
 gulp.task('html', function() {
-    return gulp.src('./src/html/**/*.html')
-        .pipe(include())
+    return gulp.src('./src/html/webPage/*.html')
+        .pipe(fileinclude({
+          prefix: '@@',
+          basepath: '@file'
+        }))
         .on('error', console.log) //监听错误， 打印日志
         .pipe(gulp.dest('./dist/html'));
 })
@@ -59,8 +63,12 @@ gulp.task('es6', function() {
 
 //插件应用库
 gulp.task('vendors', function() {
-    gulp.src('node_modules/jquery/dist/jquery.min.js')
-        .pipe(gulp.dest('dist/vendors/jquery'));
+  gulp.src('node_modules/bootstrap/dist/css/bootstrap.min.css')
+      .pipe(gulp.dest('dist/vendors/bootstrap/css'));
+  gulp.src('node_modules/jquery/dist/jquery.min.js')
+      .pipe(gulp.dest('dist/vendors/jquery'));
+  gulp.src('node_modules/bootstrap/dist/js/bootstrap.min.js')
+      .pipe(gulp.dest('dist/vendors/bootstrap/js'));
     gulp.src('src/vendors/**')
         .pipe(gulp.dest('dist/vendors'));
 });

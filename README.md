@@ -20,7 +20,7 @@
 
 ## 常用命令
 
-- `npm install` 安装所有依赖的第三方模块
+- `npm install` 安装所有依赖的第三方模块 (请勿使用cnpm，由于部分插件淘宝镜像映射地址有误，可能会导致安装失败)
 - `npm run build` 项目构建，编译less、压缩js、复制html，图片等文件到dist文件夹中
 - `npm run build-watch` 构建项目并且监控文件变化，在源文件发生变化的时候自动重新构建
 - `npm run pack` 构建项目，并将dist中的文件压缩到`release/icolor.static.zip`压缩包中
@@ -45,8 +45,8 @@
 1. class name使用中划线连接的命名方式
 2. 每个属性单独书写一行
 
-### gulp-include
+### gulp-file-include
 
-1.在html页面中可以以 <!—=include components/site-header.html —> 这样的形式来包含一个外部页面。单独的文件里面。
+1.在html页面中可以以  @@include('componet/header.html') 这样的形式来包含一个外部页面。单独的文件里面。
 2.这样可以把站点头部，页脚之类的公共html放到src/html/components/ 文件夹里面
 
