@@ -30,7 +30,7 @@ gulp.task('scss', function() {
         }))
         .pipe(scss())
         .pipe(concat('style.css'))
-        .pipe(shrink())
+        // .pipe(shrink())
         .pipe(gulp.dest('./dist/css'));
 })
 

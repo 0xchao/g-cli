@@ -50,3 +50,5 @@
 1.在html页面中可以以  @@include('componet/header.html') 这样的形式来包含一个外部页面。单独的文件里面。
 2.这样可以把站点头部，页脚之类的公共html放到src/html/components/ 文件夹里面
 
+---
+删除gulp-cssshrink
