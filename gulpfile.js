@@ -7,7 +7,7 @@ var concat = require('gulp-concat'); //文件合并插件 1
 var babel = require('gulp-babel'); //编译es6 1
 var uglify = require('gulp-uglify'); //Js 文件压缩 1
 var autoprefixer = require('gulp-autoprefixer'); //css3自动添加前缀
-var shrink = require('gulp-cssshrink'); //css 文件压缩 1
+// var shrink = require('gulp-cssshrink'); //css 文件压缩 1
 // var zip = require('gulp-zip');                   // gulp压缩工具 1
 
 
