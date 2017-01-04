@@ -1,15 +1,12 @@
 var gulp = require('gulp');
 var scss = require('gulp-sass');
-var fileinclude = require('gulp-file-include');
-// var include = require('gulp-include');         //html代码复用 
-var concat = require('gulp-concat');              //文件合并插件 
-// var imagemin = require('gulp-imagemin');       //图片压缩 
+var fileinclude = require('gulp-file-include');    //html代码复用 
+var concat = require('gulp-concat');               //文件合并插件 
+var imagemin = require('gulp-imagemin');          //图片压缩 
 var babel = require('gulp-babel');                //编译es6 
 var uglify = require('gulp-uglify');              //Js 文件压缩 
 var connect = require('gulp-connect');            //自动刷新
 var autoprefixer = require('gulp-autoprefixer');  //css3自动添加前缀
-// var shrink = require('gulp-cssshrink');        //css 文件压缩 1
-// var zip = require('gulp-zip');                 // gulp压缩工具 1
 
 
 // 设置监听任务
@@ -28,7 +25,7 @@ gulp.task('watch', ['default'], function() {
 gulp.task('connect', function() {
         connect.server({
         // host: '192.168.1.172', //地址，可不写，不写的话，默认localhost
-        port: 1230, //端口号，可不写，默认8000
+        port: 1230, //端口号，可不写，默认8000  --->>>> 拉取后需要将webpack-dev-server 中的端口号统一
         root: './', //当前项目主目录
         livereload: true //自动刷新
     })
