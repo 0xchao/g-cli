@@ -7,7 +7,7 @@ Desktop.ini
 node_modules/
 dist/
 release/
-
+yarn.lock
 .DS_Store
 *.log
 *.swp

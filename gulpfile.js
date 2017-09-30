@@ -7,15 +7,18 @@ var babel = require('gulp-babel');                //编译es6
 var uglify = require('gulp-uglify');              //Js 文件压缩 
 var connect = require('gulp-connect');            //自动刷新
 var autoprefixer = require('gulp-autoprefixer');  //css3自动添加前缀
+var compass = require('gulp-compass');
+
 
 
 // 设置监听任务
-gulp.task('default', ['scss', 'es6', 'images', 'html', 'vendors', 'connect'], function() {});
+gulp.task('default', ['scss','compass', 'es6', 'images', 'html', 'vendors', 'connect'], function() {});
 
 
 // 监听变化
 gulp.task('watch', ['default'], function() {
-    gulp.watch('./src/scss/**/*.scss', ['scss']);
+    // gulp.watch('./src/scss/**/*.scss', ['scss']);
+    gulp.watch('./src/scss/**/*.scss', ['compass']);
     gulp.watch('./src/html/**/*.html', ['html']);
     gulp.watch('./src/js/**/*.js', ['es6']);
     gulp.watch('./src/images/**/*.*', ['images']);
@@ -37,6 +40,16 @@ gulp.task('connect', function() {
 //     gulp.watch(['./src/html/webPage/*.html'], ['html']); //监控html文件
 // }); //执行gulp server开启服务器
 
+
+gulp.task('compass', function() {
+    gulp.src('./src/scss/style.scss')
+        .pipe(compass({
+            config_file: './config.rb',
+            css: './dist/css',
+            sass: './src/scss'
+        }))
+});
+
 // 编译scss
 gulp.task('scss', function() {
     return gulp.src('./src/scss/style.scss')
@@ -49,6 +62,7 @@ gulp.task('scss', function() {
         // .pipe(shrink())
         .pipe(gulp.dest('./dist/css'));
 })
+
 
 
 // 编译
